@@ -1,5 +1,5 @@
 # droidrescue
-Universal MediaTek flashing and unbricking tololkit for all major smartphone brands# MTK Flash Universal
+Universal MediaTek flashing and unbricking tololkit for all major smartphone brands
 
 A collection of tools, scripts, and resources to flash, unbrick, or bypass authentication on MediaTek-based smartphones from various brands (Infinix, Realme, Xiaomi, Oppo, Vivo, Tecno, and more).
 
