@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# DroidRescue - MTK Universal Toolkit Menu
+
+clear
+echo "==========================================="
+echo "        DroidRescue - MTK Toolkit"
+echo "  Repair • Flash • Backup • Bypass Auth"
+echo "==========================================="
+
+while true; do
+  echo ""
+  echo "Pilih fitur:"
+  echo "1) Flash via SP Flash Tool"
+  echo "2) Backup/Dump ROM"
+  echo "3) Bypass Auth (SLA/DA/Preloader)"
+  echo "4) Deteksi Perangkat (ADB/Fastboot)"
+  echo "5) Install Dependencies"
+  echo "0) Keluar"
+  echo ""
+  read -p "Masukkan pilihan [0-5]: " pilihan
+
+  case $pilihan in
+    1)
+      echo "[*] Menjalankan SP Flash Tool..."
+      read -p "Masukkan path ke file scatter.txt: " scatter
+      if [ ! -f "$scatter" ]; then
+        echo "[!] File scatter tidak ditemukan!"
+      else
+        chmod +x ./tools/sp_flash_tool/flash_tool
+        ./tools/sp_flash_tool/flash_tool -s "$scatter"
+      fi
+      ;;
+    2)
+      echo "[*] Membackup ROM (dump full)..."
+      mkdir -p backups
+      python3 ./tools/mtkclient/main.py r -o backups/rom_dump.bin
+      echo "[✓] ROM berhasil dibackup ke folder backups/"
+      ;;
+    3)
+      echo "[*] Menjalankan bypass SLA/DA..."
+      python3 ./tools/mtkclient/main.py da --bypass
+      echo "[✓] Bypass selesai."
+      ;;
+    4)
+      echo "[*] Mendeteksi perangkat..."
+      adb devices
+      fastboot devices
+      ;;
+    5)
+      echo "[*] Menginstal dependencies..."
+      pkg update && pkg install python git unzip wget -y
+      pip install pyusb pyserial colorama
+      echo "[✓] Selesai instalasi."
+      ;;
+    0)
+      echo "Keluar dari DroidRescue."
+      exit 0
+      ;;
+    *)
+      echo "[!] Pilihan tidak valid."
+      ;;
+  esac
+done
