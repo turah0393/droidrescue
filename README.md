@@ -12,25 +12,6 @@ DroidRescue is a universal toolkit for repairing, flashing, and recovering Andro
 - Tools and scripts to automate flashing tasks
 
 ## 📦 Folder Structure
-Berikut ini contoh isi README.md yang profesional dan cocok untuk repositori GitHub kamu: turah0393/droidrescue, berdasarkan nama repo dan konteks sebelumnya (alat flashing/bypass untuk MediaTek Android):
-
-
----
-
-# DroidRescue
-
-DroidRescue is a universal toolkit for repairing, flashing, and recovering Android smartphones powered by MediaTek (MTK) chipsets. It supports multiple popular brands including Xiaomi, Realme, Infinix, Vivo, Oppo, Tecno, and more.
-
-## 🚀 Features
-
-- Flash stock/custom ROMs (via SP Flash Tool, Fastboot)
-- Unbrick soft-bricked devices
-- Bypass MediaTek authentication (SLA/DA/Preloader)
-- Dump or backup firmware partitions
-- Compatible with many MTK-based devices
-- Tools and scripts to automate flashing tasks
-
-## 📦 Folder Structure
 
 droidrescue/
 ├── firmwares/         # Kumpulan ROM bawaan (stok) atau kustom, dikelompokkan per brand
