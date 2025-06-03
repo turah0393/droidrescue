@@ -41,7 +41,6 @@ while true; do
     echo "[*] Bypass SLA/DA..."
     python3 ./tools/bypass_tool/bypass.py
     ;;
-      ;;
     4)
       echo "[*] Mendeteksi perangkat..."
       adb devices
@@ -61,7 +60,6 @@ while true; do
     echo "[✓] Perangkat terdeteksi."
   fi
   ;;
-
 7)
   echo "[*] Mengecek file SP Flash Tool..."
   if [ ! -f ./tools/sp_flash_tool/flash_tool ]; then
