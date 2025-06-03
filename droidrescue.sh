@@ -1,5 +1,7 @@
 #!/bin/bash
 
+termux-setup-storage
+
 clear
 echo "==========================================="
 echo "        DroidRescue - MTK Toolkit"
